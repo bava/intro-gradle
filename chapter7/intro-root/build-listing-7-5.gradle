@@ -1,0 +1,28 @@
+allprojects {
+    group = "com.apress.gradle"
+    version = "1.0.0-SNAPSHOT"
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }     
+}
+
+project (':repository') {
+    apply plugin: 'java'
+}
+
+project (':service') {
+    apply plugin: 'java'
+    dependencies {
+     	 compile project(':repository') 
+    }
+}
+
+project(':web') {
+    apply plugin: 'war'
+    dependencies {
+     	 compile project(':service') 
+    }
+} 

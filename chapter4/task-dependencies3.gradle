@@ -1,0 +1,8 @@
+task A << { println 'In task A' }
+
+task B << { println 'In task B' }
+
+task C << { println 'In task C' }
+
+A.dependsOn 'B'
+A.dependsOn 'C'

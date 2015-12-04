@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+configurations.all {
+  resolutionStrategy {
+      failOnVersionConflict()
+  }
+}  
+
+dependencies {
+	compile 'org.springframework:spring-core:4.2.2.RELEASE', 'org.apache.httpcomponents:httpclient:4.0'
+}
+
+repositories {
+	mavenCentral()
+}
+

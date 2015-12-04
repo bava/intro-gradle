@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+ext { springVersion = '3.0.0.RELEASE' }
+
+dependencies {
+    
+	['spring-core', 'spring-aop','spring-beans', 'spring-jdbc', 'spring-context'].each {
+        compile "org.springframework:$it:$springVersion"
+    }	
+}
+repositories {
+	mavenCentral()
+}

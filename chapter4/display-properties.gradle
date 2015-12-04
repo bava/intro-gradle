@@ -1,0 +1,18 @@
+description = "Sample Description for Project"
+task displayProperties {
+    description = "Task to display properties"
+    
+    ext {
+    	taskProp1 = "Prop Val"
+    }
+    
+    doFirst {
+			println "Project Description: $project.description"
+			println "Task name $name"
+			println "Task Description: $description"       
+   }
+
+   doLast {
+			println "Task Property 1: $taskProp1"
+   }
+}

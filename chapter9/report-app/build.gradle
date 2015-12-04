@@ -1,0 +1,13 @@
+apply plugin: 'java'
+apply plugin: 'project-report'
+
+
+dependencies {
+   compile 'ch.qos.logback:logback-classic:1.1.2'
+   
+   testCompile 'junit:junit:4.12'
+   
+   repositories {
+      mavenCentral()
+   } 
+}

@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {  
+    flatDir {
+       dirs 'lib'
+    }
+}
+
+dependencies {
+	compile name: 'commons-lang3', version : '3.4'
+	compile name: 'logback-classic', version: '1.1.3'
+}

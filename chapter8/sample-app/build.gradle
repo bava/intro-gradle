@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.apress.gradle.intro'
+archivesBaseName = 'sample-app'
+version = '1.0-SNAPSHOT'
+
+def propertiesArtifact = file('app.properties')
+
+task sourceJar (type : Jar) {
+   classifier = 'sources'
+   from sourceSets.main.allSource
+}
+
+artifacts { 
+   archives propertiesArtifact 
+   archives sourceJar
+}
+
+uploadArchives {
+	 repositories {
+	      mavenDeployer {
+		     repository (url: "http://localhost:8081/nexus/content/repositories/releases") {
+				authentication (userName: "deployment", password: "deployment123")
+			 }
+			 snapshotRepository (url: "http://localhost:8081/nexus/content/repositories/snapshots") {
+				authentication (userName: "deployment", password: "deployment123")
+			 }	
+	      } 
+	 }
+}
+
+dependencies {
+   compile 'ch.qos.logback:logback-classic:1.1.2'
+}
+
+repositories {
+    mavenCentral()
+}

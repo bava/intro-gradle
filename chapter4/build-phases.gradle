@@ -1,0 +1,13 @@
+task noActionTask {
+  description = "A task with no actions"
+  println "I am in the configuration block of $name"  
+}
+
+task withActionTask {
+   
+   println "I am in the configuration block of $name"
+
+   doLast {
+		println "performing an action in $name"
+   }
+}

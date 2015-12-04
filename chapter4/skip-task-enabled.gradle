@@ -1,0 +1,9 @@
+task skipInProd {
+	
+	enabled = !project.hasProperty('env') || project.env != "Prod"	
+	
+	doLast {
+		println 'Task execution complete'
+	}
+
+}

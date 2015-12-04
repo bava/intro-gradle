@@ -1,0 +1,14 @@
+apply plugin: 'groovy'
+
+group = 'com.apress.gradle'
+version = '1.0.0'
+
+dependencies {
+    compile gradleApi()
+}
+
+uploadArchives {
+    repositories {
+      flatDir { dirs "../repo" }
+    }
+}

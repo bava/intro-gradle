@@ -1,0 +1,13 @@
+task clean << {
+	println 'Executing clean task'
+}
+
+task compile << {
+	println 'Executing compile task'
+}
+compile.dependsOn 'clean'
+
+task ("package", dependsOn : 'compile') << {
+	println 'Executing package task'
+}
+

@@ -1,0 +1,2 @@
+description = "Hello World Project"
+println "Project Description ${ description}"

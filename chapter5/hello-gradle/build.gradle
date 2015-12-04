@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: HelloPlugin
+apply plugin: HelloPlugin2
+
+
+jar {
+   manifest {
+        attributes (
+			'Main-Class' : 'HelloGradle',
+			'Implementation-Title' : project.name,
+			'Developer'  : 'Sudha Belida'
+		)	
+   }
+}
